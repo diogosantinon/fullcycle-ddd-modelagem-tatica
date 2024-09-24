@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  ddd:
+    image: ddd-modelagem-tatica:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    tty: true
+    networks:
+      - node-network
+
+networks:
+  node-network:
+    driver: bridge    
